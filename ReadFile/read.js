@@ -4,13 +4,19 @@ const fs = require('fs');
 //let formatted= data.split("");
 var data;
 var formatted;
+
 try{
    data= fs.readFileSync('../sourceCode.txt', 'utf-8');
    formatted= data.split("");
-   formatted.forEach(i=>{fs.appendFileSync('source.html',`<span>${i}</span>`)})
+   //console.log(formatted);
+   formatted.forEach(i=>{
+     if(i==='\n'){fs.appendFileSync('source.html', `<br />`)}
+     fs.appendFileSync('source.html',`<span>${i}</span>`)})
 }catch(err){
   console.log("Error occured while trying to read the file");
 }
+
+
 
 // try{
 //   fs.writeFileSync('source.html', formatted)
