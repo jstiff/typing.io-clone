@@ -57,13 +57,24 @@ body{
 }
 span{
    
-   font-size:18px;
+   font-size:28px;
    display:inline-block;
+}
+@keyframes successKey{
+   from{background-color: blue;
+   font-size:18px; }
+   to{background-color:red; 
+   font-size:28px;
+ }
+
 }
 span.correct{
     font-size:22px;
     background-color:blue;
     color:white;
+    border-radius:50%;
+    animation-name: successKey;
+    animation-duration: .25s;
 }
 span.wrong{
     background-color:red;
@@ -80,5 +91,4 @@ pre{
 }
 .btnContainer{
    text-align:center;
-
 }
