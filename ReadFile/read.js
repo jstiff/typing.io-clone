@@ -1,15 +1,16 @@
 const fs = require('fs');
 
-//let data= fs.readFileSync('../sourceCode.txt', 'utf-8');
-//let formatted= data.split("");
-var data;
-var formatted;
+
+let data;
+let formatted;
 
 try{
    data= fs.readFileSync('../sourceCode.txt', 'utf-8');
    formatted= data.split("");
-   //console.log(formatted);
+   console.log(formatted[3]==='\s')
+   //fs.writeFileSync('log.txt', formatted)
    formatted.forEach(i=>{
+     //if(i==='\t'||'\s'){console.log('Tab found!')}
      if(i==='\n'){fs.appendFileSync('source.html', `<br />`)}
      fs.appendFileSync('source.html',`<span>${i}</span>`)})
 }catch(err){
@@ -18,11 +19,7 @@ try{
 
 
 
-// try{
-//   fs.writeFileSync('source.html', formatted)
-// }catch(err){
-//   console.log("error occured while writing to file");
-// }
+
 
 
 
@@ -37,13 +34,3 @@ try{
 //   })
 //
 // }
-
-//console.log(poop);
-//formatted.forEach((i) =>{
-  //fs.writeFileSync('TypingIo/source.html', i , err => {
-  //  if(err){
-  //    console.error(err)
-  //    return
-  //  }
-  //})
-//})
