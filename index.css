@@ -2,13 +2,17 @@ body{
    margin:0;
 }
 
-
+p{
+  font-size: 16px;
+  font-family: monospace;
+  display: inline-block;
+}
 .titleContainer{
    border-bottom:1.5px solid black;
    /*display:flex;*/
-   justify-content: center;
+
    border-radius:3px;
-   height:100px; 
+   height:100px;
 }
 
 .title{
@@ -20,6 +24,7 @@ body{
 }
 .mainContainer{
    margin-top:80px;
+
    display:flex;
    justify-content:center;
    background-color:rbga(192,192,192, 0.1);
@@ -29,16 +34,16 @@ body{
    height:350px;
 }
 #btn2{
-   border: none;
+   border-radius: 5px;
    color:black;
-   padding: 16px 32px;
+   padding: 10px 32px;
    text-align: center;
    text-decoration:none;
    display:inline-block;
    font-size: 16px;
    transition-duration:0.4s;
-   cursor:pointer;   
-   height:75px;
+   cursor:pointer;
+   height:65px;
    width: 100px;
 }
 #btn2{
@@ -52,18 +57,21 @@ body{
 }
 .titleDescription{
    display:inline-block;
-   margin-left:150px;
+   margin-left:40%;
    margin-top:45px;
+   text-align: right;
+
+
 }
 span{
-   
+
    font-size:28px;
    display:inline-block;
 }
 @keyframes successKey{
    from{background-color: blue;
    font-size:18px; }
-   to{background-color:red; 
+   to{background-color:red;
    font-size:28px;
  }
 
