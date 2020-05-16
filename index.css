@@ -1,41 +1,76 @@
-body {
-  margin: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=PT+Sans:ital@1&display=swap");
 
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #24252a;
+}
+/*.paintBtn {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 20px;
+}*/
+svg {
+  transform: rotate(-150deg);
+  height: 50px;
+  width: 50px;
+  color: #edf0f1;
+}
+header {
+  display: flex;
+  padding: 20px 10%;
+  justify-content: flex-end;
+  border-bottom: 1.25px solid black;
+}
+.nav_links {
+  list-style: none;
+}
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+.nav_links li a {
+  color: #edf0f1;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+.nav_links li a:hover {
+  color: #0088a9;
+}
 .titleDescription {
-  font-size: 1.50em;
-  font-family: monospace;
+  font-size: 1.2em;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   display: inline-block;
-  margin-left: 20%;
-  margin-top: 45px;
-  text-align: right;
-}
-.titleContainer {
-  border-bottom: 1.25px solid black;
-  border-radius: 3px;
-  height: 100px;
+  margin-right: 20%;
+  margin-top: 20px;
+
+  color: #edf0f1;
 }
 
 .title {
-  font-family: monospace;
-  font-size: 3em;
-  display: inline-block;
-  margin-top: 35px;
-  margin-left: 45px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  color: #edf0f1;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
-.mainContainer {
+#mainContainer {
   margin-top: 100px;
-  margin-left:18vw;
-  height:50vh;
+  margin-left: 18vw;
+  height: 50vh;
   width: 60vw;
   border: 1px solid black;
   background-color: rbga(192, 192, 192, 0.1);
+  padding: 25px;
 }
 
 #btn2 {
   border-radius: 5px;
-  color: black;
+  color: #edf0f1;
   padding: 10px 32px;
   text-align: center;
   text-decoration: none;
@@ -45,7 +80,7 @@ body {
   cursor: pointer;
   height: 65px;
   width: 100px;
-  margin:30px;
+  margin: 30px;
 }
 #btn2 {
   background-color: white;
@@ -58,30 +93,37 @@ body {
 }
 
 span {
-  font-size: 28px;
-  display: inline-block;
+  font-size: 20px;
+  /*display: inline-block;*/
+  padding: 2px;
+  font-family: monospace;
+  font-weight: lighter;
 }
 @keyframes successKey {
   from {
     background-color: blue;
-    font-size: 18px;
+    font-size: 20px;
   }
   to {
     background-color: red;
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 span.correct {
-  font-size: 22px;
+  font-size: 20px;
   background-color: blue;
   color: white;
-  border-radius: 50%;
+  border-radius: 10%;
   animation-name: successKey;
-  animation-duration: 0.25s;
+  /*animation: blinkingText 1.2s infinite;*/
+  /*animation-duration: 0.15s;*/
 }
 span.wrong {
   background-color: red;
   color: white;
+}
+span.remove {
+  background-color: rbga(192, 192, 192, 0.1);
 }
 span:hover {
   background-color: yellow;
