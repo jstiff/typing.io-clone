@@ -24,6 +24,7 @@ header {
   padding: 20px 10%;
   justify-content: flex-end;
   border-bottom: 1.25px solid black;
+  align-items: center;
 }
 .nav_links {
   list-style: none;
@@ -66,6 +67,7 @@ header {
   border: 1px solid black;
   background-color: rbga(192, 192, 192, 0.1);
   padding: 25px;
+  overflow: auto;
 }
 
 #btn2 {
@@ -99,30 +101,37 @@ span {
   font-family: monospace;
   font-weight: lighter;
 }
-@keyframes successKey {
+@keyframes failureKey {
   from {
     background-color: blue;
     font-size: 20px;
   }
   to {
     background-color: red;
-    font-size: 22px;
+    font-size: 29px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20%;
   }
 }
 span.correct {
   font-size: 20px;
-  background-color: blue;
+  background-color: rgb(8, 175, 8);
   color: white;
   border-radius: 10%;
-  animation-name: successKey;
+
   /*animation: blinkingText 1.2s infinite;*/
   /*animation-duration: 0.15s;*/
 }
 span.wrong {
+  animation-name: failureKey;
+  animation-duration: 0.25s;
   background-color: red;
-  color: white;
 }
 span.remove {
+  background-color: rbga(192, 192, 192, 0.1);
+}
+span.shiftKey {
   background-color: rbga(192, 192, 192, 0.1);
 }
 span:hover {
@@ -136,4 +145,10 @@ pre {
 }
 .btnContainer {
   text-align: center;
+}
+
+.mainContainer .code span .retrun::before {
+  content: "\23CE";
+  color: #fff;
+  padding: 0 0.5em;
 }
