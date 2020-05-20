@@ -27,25 +27,23 @@ console.log(
 );
 let keyIndex = 0;
 function keyHandler(eventData) {
-  //eventData.shiftKey = false;
-
   const currentChar = characters[keyIndex];
   const nextChar = characters[keyIndex + 1];
 
-  if (currentChar.innerText === eventData.key) {
-    keyIndex += 1;
-    nextChar.setAttribute("class", "correct");
-    currentChar.setAttribute("class", "remove");
-    //setAttribute just overides the current class
-    //currentChar.classList.add("correct");
-    //currentChar.classList.remove("wrong");
-  } else if (eventData.shiftKey) {
-    currentChar.setAttribute("class", "shiftKey");
-  } else {
-    console.log("falied!!!");
-    currentChar.setAttribute("class", "wrong");
-    //currentChar.classList.add("wrong");
-    //currentChar.classList.remove("correct");
+  switch (eventData.key) {
+    case currentChar.innerText:
+      keyIndex += 1;
+      nextChar.classList.add("correct");
+      currentChar.setAttribute("class", "remove");
+      break;
+
+    case eventData.shiftKey:
+      currentChar.classList.add("shiftKey");
+      break;
+
+    default:
+      console.log("falied!!!");
+      currentChar.setAttribute("class", "wrong");
   }
 }
 window.addEventListener("load", () => {
@@ -56,3 +54,23 @@ document.addEventListener("keydown", keyHandler);
 document.addEventListener("keypress", function () {
   code.style.backgroundColor = "#C0C0C0";
 });
+
+//********************************************************** */
+
+// if (currentChar.innerText === eventData.key) {
+//   keyIndex += 1;
+//   nextChar.classList.add("correct");
+//   currentChar.setAttribute("class", "remove");
+//   //setAttribute just overides the current classs
+//   //currentChar.classList.add("correct");
+//   //currentChar.classList.remove("wrong");
+// } else if (eventData.shiftKey) {
+//   currentChar.classList.add("shiftKey");
+// } else if (currentChar.innerText === "\n" && eventData.key === "Enter") {
+//   nextChar.classList.add("correct");
+// } else {
+//   console.log("falied!!!");
+//   currentChar.setAttribute("class", "wrong");
+//   //currentChar.classList.add("wrong");
+//   //currentChar.classList.remove("correct");
+// }
